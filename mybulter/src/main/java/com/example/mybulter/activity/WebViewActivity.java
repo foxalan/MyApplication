@@ -6,12 +6,13 @@ import android.os.Bundle;
 import android.os.Message;
 import android.support.annotation.Nullable;
 import android.view.MenuItem;
+import android.view.View;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.ProgressBar;
 
 import com.example.mybulter.R;
-
 
 import static com.example.mybulter.constant.Config.WEIXIN_TITLE;
 import static com.example.mybulter.constant.Config.WEIXIN_URL;
@@ -29,6 +30,9 @@ public class WebViewActivity extends BaseActivity {
     private String url;
     private String title;
 
+    //进度
+    private ProgressBar mProgressBar;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +45,7 @@ public class WebViewActivity extends BaseActivity {
 
     @Override
     public void initView() {
+        mProgressBar = (ProgressBar) findViewById(R.id.mProgressBar);
         webView = (WebView) findViewById(R.id.webView);
     }
 
@@ -71,8 +76,6 @@ public class WebViewActivity extends BaseActivity {
         if (item.getItemId() == android.R.id.home){
             finish();
         }
-
-
         return super.onOptionsItemSelected(item);
     }
 
@@ -122,6 +125,9 @@ public class WebViewActivity extends BaseActivity {
         @Override
         public void onProgressChanged(WebView view, int newProgress) {
 //            mActivity.setProgress(newProgress * 1000);
+            if(newProgress == 100){
+                mProgressBar.setVisibility(View.GONE);
+            }
             super.onProgressChanged(view,newProgress);
         }
 
