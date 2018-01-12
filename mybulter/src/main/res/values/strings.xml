@@ -11,5 +11,8 @@
     <string name="str_login">登录</string>
     <string name="str_register">注册</string>
 
+    //login dialog
+    <string name="text_now_login">正在登陆...</string>
+
 
 </resources>

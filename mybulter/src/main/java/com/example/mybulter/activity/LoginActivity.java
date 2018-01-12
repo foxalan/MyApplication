@@ -1,12 +1,21 @@
 package com.example.mybulter.activity;
 
+import android.content.Intent;
+import android.text.TextUtils;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.mybulter.R;
+import com.example.mybulter.info.MyUser;
+import com.example.mybulter.view.CustomDialog;
+
+import cn.bmob.v3.exception.BmobException;
+import cn.bmob.v3.listener.SaveListener;
 
 /**
  * @author Alan
@@ -22,6 +31,8 @@ public class LoginActivity extends BaseActivity {
     private TextView mTextForgetPassword;
 
     private ButtonClick buttonClick;
+
+    private CustomDialog dialog;
 
     @Override
     public int getContentView() {
@@ -39,6 +50,9 @@ public class LoginActivity extends BaseActivity {
         mTextForgetPassword = (TextView) findViewById(R.id.tv_forget_password);
 
         buttonClick = new ButtonClick();
+
+        dialog = new CustomDialog(this, 100, 100, R.layout.dialog_loding, R.style.Theme_dialog, Gravity.CENTER,R.style.pop_anim_style);
+        dialog.setCancelable(false);
     }
 
     @Override
@@ -58,7 +72,38 @@ public class LoginActivity extends BaseActivity {
         public void onClick(View v) {
             switch (v.getId()) {
                 case R.id.bt_login:
+                    //1.获取输入框的值
+                    String name = mEditUserName.getText().toString().trim();
+                    String password = mEditPassword.getText().toString().trim();
 
+                    if (!TextUtils.isEmpty(name) & !TextUtils.isEmpty(password)) {
+                        dialog.show();
+                        //登录
+                        final MyUser user = new MyUser();
+                        user.setUsername(name);
+                        user.setPassword(password);
+                        user.login(new SaveListener<MyUser>() {
+                            @Override
+                            public void done(MyUser myUser, BmobException e) {
+                                dialog.dismiss();
+                                //判断结果
+                                if (e == null) {
+                                    //判断邮箱是否验证
+                                    if (user.getEmailVerified()) {
+                                        //跳转
+                                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                                        finish();
+                                    } else {
+                                        Toast.makeText(LoginActivity.this, "请前往邮箱验证", Toast.LENGTH_SHORT).show();
+                                    }
+                                } else {
+                                    Toast.makeText(LoginActivity.this, "登录失败：" + e.toString(), Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
+                    } else {
+                        Toast.makeText(LoginActivity.this, "输入框不能为空", Toast.LENGTH_SHORT).show();
+                    }
                     break;
                 case R.id.bt_register:
 
