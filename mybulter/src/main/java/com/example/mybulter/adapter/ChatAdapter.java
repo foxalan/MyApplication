@@ -57,7 +57,6 @@ public class ChatAdapter extends BaseAdapter {
 
         int type = getItemViewType(chatInfoList.get(i).getTypeEnum().ordinal());
         ViewHolder viewHolder;
-
         switch (type) {
             case 0:
 
@@ -91,7 +90,8 @@ public class ChatAdapter extends BaseAdapter {
                 viewHolder.iv_pic.setBackgroundResource(R.drawable.user);
                 viewHolder.et_content.setText(chatInfoList.get(i).getContext());
                 viewHolder.tv_data.setText(chatInfoList.get(i).getData());
-
+            default:
+                break;
         }
 
 

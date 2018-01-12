@@ -29,10 +29,10 @@ public class HomeActivity extends BaseActivity {
     private TabLayout tl_home;
     private ViewPager vp_home;
 
-    private Fragment fragment_album;
-    private Fragment fragment_chat;
-    private Fragment fragment_weixin;
-    private Fragment fragment_setting;
+    private AlbumFragment fragment_album;
+    private ChatFragment fragment_chat;
+    private WeiXinFragment fragment_weixin;
+    private SettingFragment fragment_setting;
 
     private List<Fragment> fragmentList = new ArrayList<>();
     private FloatingActionButton floatingActionButton;
@@ -65,7 +65,7 @@ public class HomeActivity extends BaseActivity {
         titles = getResources().getStringArray(R.array.titles);
 
         fragment_album = new AlbumFragment();
-        fragment_chat = ChatFragment.getIntance();
+        fragment_chat = ChatFragment.getInstance();
         fragment_weixin = WeiXinFragment.getInstance();
         fragment_setting = new SettingFragment();
 
@@ -125,11 +125,10 @@ public class HomeActivity extends BaseActivity {
 
             }
         });
+        //预加载
+        vp_home.setOffscreenPageLimit(fragmentList.size());
 
         floatingActionButton.setVisibility(View.GONE);
         tl_home.setupWithViewPager(vp_home);
-
     }
-
-
 }

@@ -13,11 +13,6 @@
 
         </ListView>
 
-
-
-
-
-
     <LinearLayout
         android:layout_marginBottom="2dp"
         android:background="@drawable/bg_border_color_white"
@@ -27,6 +22,8 @@
         android:layout_height="40dp">
 
         <EditText
+            android:gravity="center_vertical"
+            android:paddingStart="10dp"
             android:text="@string/app_name"
             android:textSize="@dimen/dimen_size_small"
             android:background="@null"
