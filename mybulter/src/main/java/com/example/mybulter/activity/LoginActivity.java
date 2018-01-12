@@ -6,16 +6,19 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.mybulter.R;
 import com.example.mybulter.info.MyUser;
+import com.example.mybulter.util.ShareUtils;
 import com.example.mybulter.view.CustomDialog;
 
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.SaveListener;
+import config.Config;
 
 /**
  * @author Alan
@@ -33,6 +36,7 @@ public class LoginActivity extends BaseActivity {
     private ButtonClick buttonClick;
 
     private CustomDialog dialog;
+    private boolean keepPassword;
 
     @Override
     public int getContentView() {
@@ -51,19 +55,35 @@ public class LoginActivity extends BaseActivity {
 
         buttonClick = new ButtonClick();
 
-        dialog = new CustomDialog(this, 100, 100, R.layout.dialog_loding, R.style.Theme_dialog, Gravity.CENTER,R.style.pop_anim_style);
+        dialog = new CustomDialog(this, 100, 100, R.layout.dialog_loding, R.style.Theme_dialog, Gravity.CENTER, R.style.pop_anim_style);
         dialog.setCancelable(false);
     }
 
     @Override
     public void initData() {
-
+        keepPassword = ShareUtils.getBoolean(this, Config.CONFIG_LOGIN_KEEP_PASSWORD, false);
     }
 
     @Override
     public void initEvent() {
         mButtonLogin.setOnClickListener(buttonClick);
         mButtonRegister.setOnClickListener(buttonClick);
+        if (keepPassword) {
+            mKeepPassword.setChecked(true);
+        } else {
+            mKeepPassword.setChecked(false);
+        }
+
+        mKeepPassword.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    ShareUtils.putBoolean(LoginActivity.this, Config.CONFIG_LOGIN_KEEP_PASSWORD, true);
+                } else {
+                    ShareUtils.putBoolean(LoginActivity.this, Config.CONFIG_LOGIN_KEEP_PASSWORD, false);
+                }
+            }
+        });
     }
 
     class ButtonClick implements View.OnClickListener {
@@ -106,7 +126,7 @@ public class LoginActivity extends BaseActivity {
                     }
                     break;
                 case R.id.bt_register:
-
+                    
                     break;
                 default:
                     break;
