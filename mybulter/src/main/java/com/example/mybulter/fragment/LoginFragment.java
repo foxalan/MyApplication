@@ -54,7 +54,7 @@ public class LoginFragment extends Fragment implements LoginView {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_login, null);
+        View view = inflater.inflate(R.layout.activity_login, null);
 
         initData();
         initViews(view);
