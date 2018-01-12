@@ -131,7 +131,7 @@ public class LoginActivity extends BaseActivity {
                     startActivity(new Intent(LoginActivity.this, RegisteredActivity.class));
                     break;
                 case R.id.tv_forget_password:
-
+                    startActivity(new Intent(LoginActivity.this, ForgetPasswordActivity.class));
                     break;
                 default:
                     break;

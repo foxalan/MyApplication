@@ -1,7 +1,6 @@
 package com.example.mybulter.Application;
 
 import android.app.Application;
-import android.content.Context;
 
 import com.example.mybulter.constant.Constant;
 import com.iflytek.cloud.SpeechConstant;

@@ -56,6 +56,9 @@
         <activity android:name=".activity.RegisteredActivity"
             android:label="注册"/>
 
+        <activity android:name=".activity.ForgetPasswordActivity"
+            android:label="忘记密码"/>
+
         <activity
             android:theme="@style/SettingTheme"
             android:label="系统设置"
