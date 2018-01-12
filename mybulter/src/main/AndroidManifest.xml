@@ -53,6 +53,9 @@
             android:theme="@style/SettingTheme"
             android:label="主页"/>
 
+        <activity android:name=".activity.RegisteredActivity"
+            android:label="注册"/>
+
         <activity
             android:theme="@style/SettingTheme"
             android:label="系统设置"

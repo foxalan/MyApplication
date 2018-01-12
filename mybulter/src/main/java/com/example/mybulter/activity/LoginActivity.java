@@ -68,8 +68,10 @@ public class LoginActivity extends BaseActivity {
     public void initEvent() {
         mButtonLogin.setOnClickListener(buttonClick);
         mButtonRegister.setOnClickListener(buttonClick);
+        mTextForgetPassword.setOnClickListener(buttonClick);
         if (keepPassword) {
             mKeepPassword.setChecked(true);
+            //todo
         } else {
             mKeepPassword.setChecked(false);
         }
@@ -126,7 +128,10 @@ public class LoginActivity extends BaseActivity {
                     }
                     break;
                 case R.id.bt_register:
-                    
+                    startActivity(new Intent(LoginActivity.this, RegisteredActivity.class));
+                    break;
+                case R.id.tv_forget_password:
+
                     break;
                 default:
                     break;
