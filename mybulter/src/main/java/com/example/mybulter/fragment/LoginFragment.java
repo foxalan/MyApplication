@@ -28,6 +28,9 @@ import com.example.mybulter.view.CustomDialog;
 import com.example.mybulter.view.MyToast;
 import com.example.mybulter.view.inter.LoginView;
 
+/**
+ * @author Alan
+ */
 
 public class LoginFragment extends Fragment implements LoginView {
     private EditText et_username;

@@ -1,1 +1,1 @@
-include ':app', ':myapplication2', ':audiotest', ':signdemo', ':frequentview', ':netdemo', ':databasedemo', ':arithmatic', ':mybulter', ':modeldemo', ':alan', ':adanvace', ':base_java', ':sportlogs', ':fingertest'
+include ':app', ':signdemo', ':frequentview', ':netdemo', ':databasedemo', ':mybulter', ':modeldemo', ':adanvace', ':base_java', ':sportlogs', ':fingertest'

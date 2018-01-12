@@ -2,22 +2,35 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_gravity="center"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/profile_image"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:src="@drawable/imooc_logo"
+        app:civ_border_color="@android:color/white"
+        app:civ_border_width="2dp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_margin="5dp"
+        android:layout_margin="10dp"
         android:background="@drawable/bg_border_color_white"
         android:orientation="horizontal">
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
             android:layout_weight="3"
-            android:gravity="left|center_vertical"
-            android:text="用户名："
+            android:gravity="start|center_vertical"
+            android:text="@string/str_login_username"
             android:textColor="@color/login_text_color"
             android:textSize="@dimen/login_text_size" />
 
@@ -34,7 +47,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_margin="5dp"
+        android:layout_margin="10dp"
         android:background="@drawable/bg_border_color_white"
         android:orientation="horizontal">
 
@@ -43,10 +56,10 @@
             android:textSize="@dimen/login_text_size"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
             android:layout_weight="3"
-            android:gravity="left|center_vertical"
-            android:text="密    码："
+            android:gravity="start|center_vertical"
+            android:text="@string/str_login_password"
             />
 
         <EditText
@@ -72,22 +85,10 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="记住密码"
+            android:text="@string/str_login_password_get"
              />
 
-
     </LinearLayout>
-
-    <Button
-        android:textColor="@color/login_text_color"
-        android:textSize="@dimen/login_text_size"
-        android:id="@+id/bt_register"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_margin="5dp"
-        android:background="@drawable/bg_border_color_white"
-        android:text="注册"
-        />
 
 
     <Button
@@ -96,9 +97,20 @@
         android:id="@+id/bt_login"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_margin="5dp"
+        android:layout_margin="10dp"
         android:background="@drawable/bg_border_color_white"
-        android:text="登录"
+        android:text="@string/str_login"
+        />
+
+    <Button
+        android:textColor="@color/login_text_color"
+        android:textSize="@dimen/login_text_size"
+        android:id="@+id/bt_register"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/bg_border_color_white"
+        android:text="@string/str_register"
         />
 
     <TextView
@@ -107,12 +119,11 @@
         android:id="@+id/tv_forget_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="right"
+        android:layout_gravity="end"
         android:layout_margin="10dp"
-        android:gravity="right"
-        android:text="忘记密码"
+        android:gravity="end"
+        android:text="@string/str_login_password_forget"
         />
-
 
     <!--<com.example.mybulter.view.WaitView-->
         <!--android:background="@color/black"-->
