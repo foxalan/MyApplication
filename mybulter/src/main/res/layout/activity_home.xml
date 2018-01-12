@@ -19,8 +19,7 @@
             app:tabIndicatorColor="@color/white"
             android:background="@color/myBarColor"
             app:tabGravity="fill"
-
-            >
+            app:tabMode="fixed">
 
         </android.support.design.widget.TabLayout>
 

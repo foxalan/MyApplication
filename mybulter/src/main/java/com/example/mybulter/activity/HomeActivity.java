@@ -8,7 +8,6 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.view.LayoutInflater;
 import android.view.View;
 
 import com.example.mybulter.R;
@@ -16,11 +15,13 @@ import com.example.mybulter.fragment.AlbumFragment;
 import com.example.mybulter.fragment.ChatFragment;
 import com.example.mybulter.fragment.SettingFragment;
 import com.example.mybulter.fragment.WeiXinFragment;
-import com.example.mybulter.view.MyToast;
-
 
 import java.util.ArrayList;
 import java.util.List;
+
+/**
+ * @author Alan
+ */
 
 
 public class HomeActivity extends BaseActivity {
@@ -41,10 +42,8 @@ public class HomeActivity extends BaseActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         //去掉阴影
         if (getSupportActionBar() != null) {
-
             getSupportActionBar().setElevation(0);
         }
     }
@@ -56,11 +55,8 @@ public class HomeActivity extends BaseActivity {
 
     @Override
     public void initView() {
-
-
         tl_home = (TabLayout) findViewById(R.id.tl_home);
         vp_home = (ViewPager) findViewById(R.id.vp_home);
-
         floatingActionButton = (FloatingActionButton) findViewById(R.id.bt_setting);
     }
 
@@ -131,7 +127,6 @@ public class HomeActivity extends BaseActivity {
         });
 
         floatingActionButton.setVisibility(View.GONE);
-        tl_home.setTabGravity(TabLayout.GRAVITY_CENTER);
         tl_home.setupWithViewPager(vp_home);
 
     }
