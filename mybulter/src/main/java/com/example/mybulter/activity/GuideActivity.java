@@ -128,8 +128,6 @@ public class GuideActivity extends BaseActivity {
         vp_guide.setPageTransformer(true, new ViewPager.PageTransformer() {
             @Override
             public void transformPage(View page, float position) {
-
-
             }
         });
 
@@ -139,7 +137,6 @@ public class GuideActivity extends BaseActivity {
         ib_point_1.setOnClickListener(buttonClick);
         ib_point_2.setOnClickListener(buttonClick);
         ib_point_3.setOnClickListener(buttonClick);
-
 
     }
 
@@ -183,7 +180,8 @@ public class GuideActivity extends BaseActivity {
                     setButtonGreen(2);
                     vp_guide.setCurrentItem(2);
                     break;
-
+                default:
+                    break;
             }
         }
     }
