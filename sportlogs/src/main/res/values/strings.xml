@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">sportlogs</string>\
+    <string name="activity_home_label">日志</string>
+    <string name="activity_home_target">目标</string>
+    <string name="activity_home_setting">设置</string>
+    <string name="text_set_flow">日志标签</string>
+    <string name="text_journal_history_search">历史日志查询</string>
+    <string name="text_journal_history">历史日志</string>
+</resources>

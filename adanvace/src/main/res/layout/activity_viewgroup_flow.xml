@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+
+    <LinearLayout
+        android:layout_margin="10dp"
+        android:background="@drawable/bg_et_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:paddingLeft="10dp"
+            android:background="@null"
+            android:id="@+id/et_add_flow"
+            android:layout_weight="6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:gravity="center"
+            android:textSize="@dimen/text_size_normal"
+            android:id="@+id/bt_add_flow"
+            android:text="ADD FLOW"
+            android:layout_weight="4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <com.example.adanvace.viewgroup.FlowViewGroup
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/lightgray"
+        android:id="@+id/vp_flow"
+        >
+
+        <TextView
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="5dp"
+            android:background="@drawable/bg_tv_flow"
+            android:textColor="@color/black"
+            android:text="JAVA"
+            android:textSize="@dimen/text_size_normal"
+            android:layout_margin="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="5dp"
+            android:background="@drawable/bg_tv_flow"
+            android:textColor="@color/black"
+            android:text="Android"
+            android:textSize="@dimen/text_size_normal"
+            android:layout_margin="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:clickable="true"
+            android:focusable="true"
+            android:background="@drawable/bg_tv_flow"
+            android:padding="5dp"
+            android:textColor="@color/black"
+            android:text="C"
+            android:textSize="@dimen/text_size_normal"
+            android:layout_margin="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:clickable="true"
+            android:focusable="true"
+            android:background="@drawable/bg_tv_flow"
+            android:padding="5dp"
+            android:textColor="@color/black"
+            android:text="C#"
+            android:textSize="@dimen/text_size_normal"
+            android:layout_margin="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:clickable="true"
+            android:focusable="true"
+            android:background="@drawable/bg_tv_flow"
+            android:padding="5dp"
+            android:textColor="@color/black"
+            android:text="JAVA SE"
+            android:textSize="@dimen/text_size_normal"
+            android:layout_margin="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:clickable="true"
+            android:focusable="true"
+            android:background="@drawable/bg_tv_flow"
+            android:padding="5dp"
+            android:textColor="@color/black"
+            android:text="JAVA EE"
+            android:textSize="@dimen/text_size_normal"
+            android:layout_margin="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:clickable="true"
+            android:focusable="true"
+            android:background="@drawable/bg_tv_flow"
+            android:padding="5dp"
+            android:textColor="@color/black"
+            android:text="JAVA WEB"
+            android:textSize="@dimen/text_size_normal"
+            android:layout_margin="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+
+            android:background="@drawable/bg_tv_flow"
+            android:padding="5dp"
+            android:textColor="@color/black"
+            android:text="IOS"
+            android:textSize="@dimen/text_size_normal"
+            android:layout_margin="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:clickable="true"
+            android:focusable="true"
+            android:background="@drawable/bg_tv_flow"
+            android:padding="5dp"
+            android:textColor="@color/black"
+            android:text="OC"
+            android:textSize="@dimen/text_size_normal"
+            android:layout_margin="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:clickable="true"
+            android:focusable="true"
+            android:background="@drawable/bg_tv_flow"
+            android:padding="5dp"
+            android:textColor="@color/black"
+            android:text="PYTHON"
+            android:textSize="@dimen/text_size_normal"
+            android:layout_margin="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </com.example.adanvace.viewgroup.FlowViewGroup>
+
+</LinearLayout>
+
+

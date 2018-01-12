@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="NumberView">
+        <attr name="round_radius" format="dimension"/>
+        <attr name="text_size" format="dimension"/>
+    </declare-styleable>
+
+    <declare-styleable name="CustomProgressBar">
+        <attr name="progressbar_width" format="dimension"/>
+        <attr name="progressbar_height" format="dimension"/>
+        <attr name="progressbar_color" format="color"/>
+    </declare-styleable>
+</resources>

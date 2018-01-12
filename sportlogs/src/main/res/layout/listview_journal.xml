@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_margin="@dimen/margin_big"
+        android:orientation="vertical"
+        android:layout_weight="5"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textStyle="bold"
+            android:padding="@dimen/padding_normal"
+            android:text="SPORT ADVANCE"
+            android:id="@+id/tv_list_journal_name"
+            android:textSize="@dimen/text_size_small"
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:layout_height="0dp" />
+
+        <TextView
+            android:textStyle="bold"
+            android:padding="@dimen/padding_normal"
+            android:layout_below="@id/tv_list_journal_name"
+            android:text="2017-9-1"
+            android:id="@+id/tv_list_journal_time"
+            android:textSize="@dimen/text_size_small"
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:layout_height="0dp" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_weight="3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content">
+        <com.example.sportlogs.view.NumberView
+            android:layout_gravity="center_vertical"
+            android:id="@+id/view_number_list_values"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:text_size="25dp"
+            app:round_radius="50dp"/>
+
+    </LinearLayout>
+
+</LinearLayout>

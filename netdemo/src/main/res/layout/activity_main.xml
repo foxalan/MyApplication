@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.netdemo.MainActivity">
+
+    <Button
+        android:onClick="onClick"
+        android:id="@+id/bt_simple_net_connect"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Simple Net Connect" />
+
+    <Button
+        android:text="get the pic by cache"
+        android:id="@+id/bt_cache_pic_connect"
+        android:onClick="onClick"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:gravity="center"
+        android:text="多线程下载"
+        android:id="@+id/bt_download"
+        android:onClick="onClick"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:gravity="center"
+        android:text="断点续传"
+        android:id="@+id/bt_breaking_point"
+        android:onClick="onClick"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

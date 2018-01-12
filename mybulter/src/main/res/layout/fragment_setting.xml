@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:background="@color/alpha_kb_color"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/civ_user_view"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/add_pic"
+            app:civ_border_color="@color/white"
+            app:civ_border_width="2dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:layout_marginTop="10dp"
+        android:layout_weight="7"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:id="@+id/ll_owner_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.example.mybulter.view.SetListView
+                android:id="@+id/lv_set_setting"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </com.example.mybulter.view.SetListView>
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

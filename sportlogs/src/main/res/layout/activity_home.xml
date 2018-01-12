@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_home"
+        android:layout_width="match_parent"
+        android:layout_weight="8"
+        android:layout_height="0dp">
+
+    </android.support.v4.view.ViewPager>
+
+    <View
+        android:background="@color/lightgray"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+
+    <LinearLayout
+        android:padding="2dp"
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+
+        <LinearLayout
+            android:id="@+id/ll_home_target"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/iv_home_target"
+                android:src="@drawable/target_normal"
+                android:layout_weight="2"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp" />
+            <TextView
+                android:textStyle="bold"
+                android:paddingRight="8dp"
+                android:id="@+id/tv_home_target"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:text="@string/activity_home_target"
+                android:textSize="@dimen/text_size_small"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_home_journal"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/iv_home_journal"
+                android:src="@drawable/journal_normal"
+                android:layout_weight="2"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp" />
+            <TextView
+
+                android:textStyle="bold"
+                android:paddingRight="6dp"
+                android:id="@+id/tv_home_journal"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:text="@string/activity_home_label"
+                android:textSize="@dimen/text_size_small"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_home_setting"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_gravity="center"
+                android:id="@+id/iv_home_setting"
+                android:src="@drawable/setting_normal"
+                android:layout_weight="2"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp" />
+            <TextView
+                android:textStyle="bold"
+                android:id="@+id/tv_home_setting"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:text="@string/activity_home_setting"
+                android:textSize="@dimen/text_size_small"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.databasedemo.MainActivity">
+
+    <Button
+        android:onClick="onClick"
+        android:id="@+id/bt_share"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="share_preference" />
+
+    <Button
+        android:onClick="onClick"
+        android:id="@+id/bt_database"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="database" />
+
+</LinearLayout>

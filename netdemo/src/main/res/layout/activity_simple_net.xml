@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:hint="输入网址"
+        android:textSize="25dp"
+        android:id="@+id/tv_url"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+
+    <EditText
+        android:layout_marginTop="20dp"
+        android:textSize="25dp"
+        android:hint="返回結果"
+        android:id="@+id/tv_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:textSize="25dp"
+        android:text="发送"
+        android:id="@+id/bt_send"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:layout_marginTop="30dp"
+        android:id="@+id/iv_pic"
+        android:layout_width="match_parent"
+        android:layout_height="300dp" />
+</LinearLayout>

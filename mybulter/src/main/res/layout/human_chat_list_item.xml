@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <ImageView
+        android:id="@+id/iv_human_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/user" />
+
+    <EditText
+        android:padding="15dp"
+        android:gravity="clip_horizontal"
+        android:textSize="@dimen/dimen_size_small"
+        android:textColor="@color/white"
+        android:id="@+id/et_human_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/iv_human_icon"
+        android:background="@drawable/chat_bg_user"
+        android:focusable="false"
+        android:text="你好,我是智能机器人小莫,非常高兴为你服务" />
+
+    <TextView
+        android:id="@+id/tv_human_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/iv_human_icon"
+        android:layout_centerHorizontal="true"
+        android:text="2017-07-20" />
+
+</RelativeLayout>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="login_text_size">25sp</dimen>
+
+    <dimen name="dimen_size_small">15sp</dimen>
+
+    <dimen name="dimen_size_normal">25sp</dimen>
+
+    <dimen name="dime_size_large">35sp</dimen>
+
+
+    <dimen name="dimen_list_title">20sp</dimen>
+
+</resources>

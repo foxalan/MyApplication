@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CustomView">
+        <attr name="textSize" format="dimension"/>
+        <attr name="image" format="reference"/>
+        <attr name="textColor" format="color"/>
+        <attr name="text" format="string"/>
+    </declare-styleable>
+    
+    <declare-styleable name="RadiusView">
+        <attr name="radius_size" format="dimension"/>
+        <attr name="background_color" format="color"/>
+        <attr name="radius_color" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="SoundView">
+        <attr name="firstColor" format="color"/>
+        <attr name="secondColor" format="color"/>
+        <attr name="round_size" format="dimension"/>
+        <attr name="round_count" format="integer"/>
+    </declare-styleable>
+
+    <declare-styleable name="StyleView">
+        <attr name="image_radius" format="dimension"/>
+        <attr name="background_image" format="reference"/>
+    </declare-styleable>
+</resources>

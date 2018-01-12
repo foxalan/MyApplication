@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.adanvace.viewgroup.VerticalLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:id="@+id/vl_layout"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical"
+    >
+
+    <RelativeLayout
+        android:background="@drawable/guide_concise"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="#fff"
+            android:text="hello" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:background="@drawable/guide_smart"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="#fff"
+            android:text="hello" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:background="@drawable/guide_strong"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="#fff"
+            android:text="hello" />
+    </RelativeLayout>
+
+
+
+</com.example.adanvace.viewgroup.VerticalLinearLayout>

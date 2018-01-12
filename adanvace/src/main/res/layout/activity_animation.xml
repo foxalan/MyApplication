@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/bt_animation_alpha"
+        android:onClick="onClick"
+        android:gravity="center"
+        android:textSize="@dimen/text_size_normal"
+        android:text="ALPHA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/bt_animation_translate"
+        android:onClick="onClick"
+        android:gravity="center"
+        android:textSize="@dimen/text_size_normal"
+        android:text="TRANSLATE"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/bt_animation_scale"
+        android:onClick="onClick"
+        android:gravity="center"
+        android:textSize="@dimen/text_size_normal"
+        android:text="SCALE"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/bt_animation_rotation"
+        android:onClick="onClick"
+        android:gravity="center"
+        android:textSize="@dimen/text_size_normal"
+        android:text="rotation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:layout_marginTop="50dp"
+        android:layout_gravity="center"
+        android:src="@drawable/iphone"
+        android:id="@+id/iv_anim"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+    <Button
+        android:layout_marginTop="20dp"
+        android:id="@+id/bt_animation_scale_alpha"
+        android:onClick="onClick"
+        android:gravity="center"
+        android:textSize="@dimen/text_size_normal"
+        android:text="缩小,淡出"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+</LinearLayout>

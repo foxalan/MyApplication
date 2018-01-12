@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <EditText
+        android:padding="5dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/bg_et_search"
+        android:drawableLeft="@drawable/ic_search_black_24dp"
+        android:hint="请输入要查询的电话"
+        android:id="@+id/et_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/lightgray"/>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.example.adanvace.view.CustomListView
+                android:id="@+id/lv_contacts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/lightgray"/>
+            <TextView
+                android:padding="5dp"
+                android:textSize="@dimen/text_size_small"
+                android:gravity="center"
+                android:id="@+id/tv_contacts"
+                android:text="一共30个联系人"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+    <Button
+        android:visibility="gone"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/bg_et_search"
+        android:textSize="@dimen/text_size_small"
+        android:gravity="center"
+        android:text="删除选中的姓名"
+        android:id="@+id/bt_clear_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

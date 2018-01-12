@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:background="@drawable/bg_border_color_white"
+        android:layout_margin="5dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <TextView
+            android:textColor="@color/login_text_color"
+            android:textSize="@dimen/login_text_size"
+            android:layout_marginLeft="10dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:gravity="left|center_vertical"
+            android:text="手机号："
+             />
+
+        <EditText
+            android:textColor="@color/login_text_color"
+            android:textSize="@dimen/login_text_size"
+            android:background="@null"
+            android:id="@+id/et_phone"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="7" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:background="@drawable/bg_border_color_white"
+        android:layout_margin="5dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <TextView
+            android:textColor="@color/login_text_color"
+            android:textSize="@dimen/login_text_size"
+            android:layout_marginLeft="10dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:gravity="left|center_vertical"
+            android:text="用户名："
+             />
+
+        <EditText
+            android:textColor="@color/login_text_color"
+            android:textSize="@dimen/login_text_size"
+            android:background="@null"
+            android:id="@+id/et_register_username"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="7" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:background="@drawable/bg_border_color_white"
+        android:layout_margin="5dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <TextView
+            android:textColor="@color/login_text_color"
+            android:textSize="@dimen/login_text_size"
+            android:layout_marginLeft="10dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:gravity="left|center_vertical"
+            android:text="密    码："
+             />
+
+        <EditText
+            android:background="@null"
+            android:inputType="textPassword"
+            android:id="@+id/et_register_password"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="7" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:background="@drawable/bg_border_color_white"
+        android:layout_margin="5dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <TextView
+            android:textColor="@color/login_text_color"
+            android:textSize="@dimen/login_text_size"
+            android:layout_marginLeft="10dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:gravity="left|center_vertical"
+            android:text="密    码："
+             />
+
+        <EditText
+            android:textColor="@color/login_text_color"
+            android:textSize="@dimen/login_text_size"
+            android:background="@null"
+            android:inputType="textPassword"
+            android:id="@+id/et_register_password_again"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="7" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:background="@drawable/bg_border_color_white"
+        android:layout_margin="5dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <TextView
+            android:textColor="@color/login_text_color"
+            android:textSize="@dimen/login_text_size"
+            android:layout_marginLeft="10dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:gravity="left|center_vertical"
+            android:text="验证码："
+             />
+
+        <EditText
+
+            android:textColor="@color/login_text_color"
+            android:textSize="@dimen/login_text_size"
+            android:background="@null"
+            android:id="@+id/et_identify"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="4" />
+
+        <com.example.mybulter.view.IdentifyView
+            android:layout_margin="5dp"
+            android:id="@+id/view_identify"
+            android:layout_weight="3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:identify_text_size="@dimen/login_text_size"
+            app:identify_text_color="@color/color_list_setting_bg"
+            app:identify_text_background="@color/white"/>
+
+
+    </LinearLayout>
+
+
+    <Button
+
+        android:textColor="@color/login_text_color"
+        android:textSize="@dimen/login_text_size"
+        android:background="@drawable/bg_border_color_white"
+        android:layout_margin="5dp"
+        android:id="@+id/bt_register_sure"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="提交" />
+
+
+</LinearLayout>

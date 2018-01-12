@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="IdentifyView">
+        <attr name="identify_text_color" format="color"/>
+        <attr name="identify_text_size" format="dimension"/>
+        <attr name="identify_text_background" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="WaitView">
+        <attr name="radius" format="dimension"/>
+        <attr name="firstColor" format="color"/>
+        <attr name="secondColor" format="color"/>
+        <attr name="number" format="integer"/>
+    </declare-styleable>
+</resources>

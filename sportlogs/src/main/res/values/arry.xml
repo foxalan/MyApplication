@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="target">
+        <item>现有目标</item>
+        <item>已经完成</item>
+        <item>添加目标</item>
+    </string-array>
+
+    <string-array name="journal_list">
+        <item>SPORT_ARM</item>
+        <item>SPORT_LEG</item>
+        <item>SPORT_RUN</item>
+        <item>ANDROID_BASE</item>
+        <item>ANDROID_ADVANCE</item>
+        <item>ANDROID_PROJECT</item>
+        <item>EYES_SCREEN</item>
+        <item>EYES_BAD</item>
+        <item>JJ_GG</item>
+    </string-array>
+</resources>

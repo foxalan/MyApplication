@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <TextView
+            android:layout_weight="2"
+            android:gravity="left|center_vertical"
+            android:padding="@dimen/padding_normal"
+            android:text="@string/text_set_flow"
+            android:textColor="@color/color_custom"
+            android:textStyle="bold"
+            android:textSize="@dimen/text_size_normal"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+
+        <ImageButton
+            android:id="@+id/ib_add_journal"
+            android:layout_margin="5dp"
+            android:layout_gravity="right|center_vertical"
+            android:background="@drawable/add"
+            android:layout_width="40dp"
+            android:layout_height="40dp" />
+
+    </LinearLayout>
+
+
+    <View
+        android:background="@color/color_custom"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"/>
+
+    <com.example.sportlogs.viewgroup.FlowViewGroup
+        android:id="@+id/gp_flow"
+        android:layout_width="match_parent"
+        android:layout_height="160dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/journal_text_bg"
+            android:padding="5dp"
+            android:text="SPORT_ARM"
+            android:textColor="@color/color_custom"
+            android:textSize="@dimen/text_size_small" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/journal_text_bg"
+            android:padding="5dp"
+            android:text="SPORT_LEG"
+            android:textColor="@color/color_custom"
+            android:textSize="@dimen/text_size_small" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/journal_text_bg"
+            android:padding="5dp"
+            android:text="SPORT_RUN"
+            android:textColor="@color/color_custom"
+            android:textSize="@dimen/text_size_small" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/journal_text_bg"
+            android:padding="5dp"
+            android:text="ANDROID_BASE"
+            android:textColor="@color/color_custom"
+            android:textSize="@dimen/text_size_small" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/journal_text_bg"
+            android:padding="5dp"
+            android:text="ANDROID_ADVANCE"
+            android:textColor="@color/color_custom"
+            android:textSize="@dimen/text_size_small" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/journal_text_bg"
+            android:padding="5dp"
+            android:text="ANDROID_PROJECT"
+            android:textColor="@color/color_custom"
+            android:textSize="@dimen/text_size_small" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/journal_text_bg"
+            android:padding="5dp"
+            android:text="EYES_SCREEN"
+            android:textColor="@color/color_custom"
+            android:textSize="@dimen/text_size_small" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/journal_text_bg"
+            android:padding="5dp"
+            android:text="EYES_BAD"
+            android:textColor="@color/color_custom"
+            android:textSize="@dimen/text_size_small" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/journal_text_bg"
+            android:padding="5dp"
+            android:text="JJ_GG"
+            android:textColor="@color/color_custom"
+            android:textSize="@dimen/text_size_small" />
+    </com.example.sportlogs.viewgroup.FlowViewGroup>
+
+    <View
+        android:background="@color/color_custom"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"/>
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <TextView
+            android:layout_weight="2"
+            android:gravity="left|center_vertical"
+            android:padding="@dimen/padding_normal"
+            android:text="@string/text_journal_history"
+            android:textColor="@color/color_custom"
+            android:textStyle="bold"
+            android:textSize="@dimen/text_size_normal"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+
+
+    </LinearLayout>
+
+
+    <View
+        android:background="@color/color_custom"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"/>
+
+    <ListView
+        android:id="@+id/lv_journal_history_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </ListView>
+
+
+</LinearLayout>

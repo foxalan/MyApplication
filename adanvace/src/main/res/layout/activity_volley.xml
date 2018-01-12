@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:text="获取字符串"
+        android:onClick="onVolleyClick"
+        android:id="@+id/bt_get_string"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:hint="字符串"
+        android:id="@+id/et_show_string"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <Button
+        android:text="获取JSON数据"
+        android:onClick="onVolleyClick"
+        android:id="@+id/bt_get_json"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:hint="JSON"
+        android:id="@+id/et_show_json"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:text="获取图片"
+        android:onClick="onVolleyClick"
+        android:id="@+id/bt_get_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:hint="JSON"
+        android:id="@+id/iv_volley"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+</LinearLayout>

@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:background="@drawable/bg_border_color_white"
+        android:layout_margin="@dimen/margin_normal"
+        android:padding="@dimen/padding_normal"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="NAME"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_mid"
+            android:layout_weight="2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+        <View
+            android:background="@color/lightgray"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"/>
+
+        <EditText
+            android:clickable="false"
+            android:focusable="false"
+            android:paddingLeft="@dimen/padding_big"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_mid"
+            android:id="@+id/et_target_modify_name"
+            android:background="@null"
+            android:layout_weight="5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:background="@drawable/bg_border_color_white"
+        android:layout_margin="@dimen/margin_normal"
+        android:padding="@dimen/padding_normal"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="Item "
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_mid"
+            android:layout_weight="2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+        <View
+            android:background="@color/lightgray"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"/>
+
+
+        <EditText
+            android:focusable="true"
+            android:paddingLeft="@dimen/padding_big"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_mid"
+            android:id="@+id/et_target_modify_name_item"
+            android:background="@null"
+            android:layout_weight="5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll_target_start_time"
+        android:background="@drawable/bg_border_color_white"
+        android:layout_margin="@dimen/margin_normal"
+        android:padding="@dimen/padding_normal"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="Start time"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_mid"
+            android:layout_weight="2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+        <View
+            android:background="@color/lightgray"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"/>
+
+
+        <EditText
+            android:paddingLeft="@dimen/padding_big"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_mid"
+            android:enabled="false"
+            android:focusable="false"
+            android:id="@+id/et_target_modify_start_time"
+            android:background="@null"
+            android:layout_weight="5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll_target_modify_end_time"
+        android:background="@drawable/bg_border_color_white"
+        android:layout_margin="@dimen/margin_normal"
+        android:padding="@dimen/padding_normal"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="End time"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_mid"
+            android:layout_weight="2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+        <View
+            android:background="@color/lightgray"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"/>
+
+        <EditText
+            android:paddingLeft="@dimen/padding_big"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_mid"
+            android:enabled="false"
+            android:focusable="false"
+            android:id="@+id/et_target_modify_end_time"
+            android:background="@null"
+            android:layout_weight="5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:background="@drawable/bg_border_color_white"
+        android:layout_margin="@dimen/margin_normal"
+        android:padding="@dimen/padding_normal"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="Value"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_mid"
+            android:layout_weight="2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+        <View
+            android:background="@color/lightgray"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"/>
+
+
+        <EditText
+            android:paddingLeft="@dimen/padding_big"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_mid"
+            android:id="@+id/et_target_modify_values"
+            android:inputType="numberDecimal"
+            android:background="@null"
+            android:layout_weight="5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:background="@drawable/bg_border_color_white"
+        android:layout_margin="@dimen/margin_normal"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:textSize="@dimen/text_size_mid"
+            android:textColor="@color/black"
+            android:text="modify"
+            android:id="@+id/bt_target_modify_sure"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:background="@drawable/bg_border_color_white"
+        android:layout_margin="@dimen/margin_normal"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:textSize="@dimen/text_size_mid"
+            android:textColor="@color/black"
+            android:text="delete"
+            android:id="@+id/bt_target_modify_delete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+
+
+</LinearLayout>

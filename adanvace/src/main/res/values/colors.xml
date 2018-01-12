@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="lightblack">#060707</color>
+    <color name="colorlightbluebg">#5089c1df</color>
+    <color name="colorlightblue">#89c1df</color>
+    <color name="white">#ffffffff</color>
+    <color name="black">#000000</color>
+    <color name="red">#ffff0000</color>
+    <color name="green">#ff00ff00</color>
+    <color name="blue">#ff0000ff</color>
+    <color name="yellow">#ffffff00</color>
+    <color name="magenta">#ffff00ff</color>
+    <color name="cyan">#ff00ffff</color>
+    <color name="lightgray">#ffaaaaaa</color>
+    <color name="medgray">#ff666666</color>
+    <color name="darkgray">#ff222222</color>
+    <color name="transparent">#00000000</color>
+    <color name="alpha_kb_color">#304462</color>
+    <color name="number_key">#486898</color>
+
+    <color name="colorBt_bg">#FD0003</color>
+    <color name="colorBt_tv">#DB6A26</color>
+    <color name="colorWare">#DDDDDD</color>
+    <color name="colorTextColor">#9C9289</color>
+
+
+    <color name="color_list_setting_bg">#00ffff</color>
+
+    <color name="myBarColor">#0682AF</color>
+
+    <color name="login_text_color">#060707</color>
+</resources>

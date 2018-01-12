@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="functions">
+        <item >系统参数</item>
+        <item >货道管理</item>
+        <item >设备管理</item>
+        <item >格子柜管理</item>
+        <item >退出維护模式 </item>
+    </string-array>
+
+    <string-array name="titles">
+        <item>智能聊天</item>
+        <item>微信精选</item>
+        <item>美女相册</item>
+        <item>我的设置</item>
+    </string-array>
+
+</resources>
