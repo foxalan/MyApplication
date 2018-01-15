@@ -45,7 +45,6 @@ public class MainActivity extends AppCompatActivity {
         sharedPreferencesUtil = new SharedPreferencesUtil(this);
         isFirst = sharedPreferencesUtil.getIsFirst();
 
-
         if (isFirst) {
             Message message = new Message();
             message.what = MSG_GUIDE;

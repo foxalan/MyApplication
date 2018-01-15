@@ -1,6 +1,5 @@
 package com.example.mybulter.fragment;
 
-import android.app.IntentService;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
@@ -18,17 +17,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.ImageView;
 
 import com.example.mybulter.R;
 import com.example.mybulter.adapter.SettingAdapter;
 import com.example.mybulter.data.ListSource;
 import com.example.mybulter.info.SettingInfo;
-import com.example.mybulter.info.UserInfo;
 import com.example.mybulter.util.L;
 import com.example.mybulter.util.UtilTools;
 import com.example.mybulter.view.CustomDialog;
-import com.example.mybulter.view.MyToast;
 import com.example.mybulter.view.SetListView;
 
 import java.io.File;
@@ -40,8 +36,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
-
-import static java.lang.System.out;
 
 
 public class SettingFragment extends Fragment {
@@ -62,12 +56,12 @@ public class SettingFragment extends Fragment {
     private SettingAdapter adapter;
 
     private String fileName = "icon.png";
-    private String filePath ;
+    private String filePath;
 
     private File file;
 
     private FileInputStream fis;
-    private Bitmap bitmap ;
+    private Bitmap bitmap;
 
     @Nullable
     @Override
@@ -114,7 +108,7 @@ public class SettingFragment extends Fragment {
         setListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                MyToast.showMessage("点击了第" + position + "页");
+                //         MyToast.showMessage("点击了第" + position + "页");
             }
         });
     }
@@ -124,11 +118,11 @@ public class SettingFragment extends Fragment {
         super.onResume();
         UtilTools.putImageToShare(getContext(), cir_iv_view);
         file = new File(getActivity().getCacheDir(), fileName);
-        if (file.exists()){
+        if (file.exists()) {
 
             try {
                 fis = new FileInputStream(file.getName());
-                bitmap  = BitmapFactory.decodeStream(fis);
+                bitmap = BitmapFactory.decodeStream(fis);
                 cir_iv_view.setImageBitmap(bitmap);
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
@@ -155,6 +149,9 @@ public class SettingFragment extends Fragment {
                 case R.id.bt_cancel:
                     customDialog.dismiss();
                     break;
+                default:
+                    break;
+
             }
         }
     }

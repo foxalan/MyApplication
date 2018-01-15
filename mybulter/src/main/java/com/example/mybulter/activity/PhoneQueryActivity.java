@@ -84,8 +84,6 @@ public class PhoneQueryActivity extends BaseActivity implements IQueryPhoneView{
 
         disableShowSoftInput(et_query_phone);
 
-
-
         et_query_phone.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -128,7 +126,7 @@ public class PhoneQueryActivity extends BaseActivity implements IQueryPhoneView{
             Object[] arrayOfObject = new Object[1];
             arrayOfObject[0] = Boolean.valueOf(false);
             localMethod.invoke(paramEditText, arrayOfObject);
-            return;
+
         } catch (Exception localException) {
         }
     }
@@ -171,7 +169,6 @@ public class PhoneQueryActivity extends BaseActivity implements IQueryPhoneView{
         if (item.getItemId() == android.R.id.home){
             finish();
         }
-
 
         return super.onOptionsItemSelected(item);
     }
