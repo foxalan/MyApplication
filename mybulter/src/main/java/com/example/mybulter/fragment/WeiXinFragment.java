@@ -52,11 +52,9 @@ public class WeiXinFragment extends Fragment {
     private List<String> pubList = new ArrayList<>();
 
     public static WeiXinFragment getInstance() {
-
         if (weiXinFragment == null) {
             weiXinFragment = new WeiXinFragment();
         }
-
         return weiXinFragment;
     }
 
@@ -92,10 +90,8 @@ public class WeiXinFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 TextView tv_title = (TextView) view.findViewById(R.id.tv_list_weixin_title);
-
                 String title = tv_title.getText().toString();
                 String pub_url = pubList.get(position);
-
                 Intent intent = new Intent(getActivity(), WebViewActivity.class);
                 intent.putExtra(Config.WEIXIN_TITLE,title);
                 intent.putExtra(Config.WEIXIN_URL,pub_url);
@@ -129,11 +125,9 @@ public class WeiXinFragment extends Fragment {
                     JSONObject jsonObject = null;
                     L.d(t);
                     choiceInfoList.clear();
-
                     try {
                         jsonObject = new JSONObject(t);
                         JSONObject object = jsonObject.getJSONObject("result");
-
                         JSONArray jsonArray = object.getJSONArray("list");
                         for (int i = 0; i < jsonArray.length(); i++) {
                             JSONObject jsonObject1 = (JSONObject) jsonArray.get(i);
@@ -143,10 +137,10 @@ public class WeiXinFragment extends Fragment {
                             String pub_url = jsonObject1.getString("url");
 
                             ChoiceInfo choiceInfo = new ChoiceInfo(title, pub, imageUrl);
+                         //   L.d(choiceInfo.toString());
                             choiceInfoList.add(choiceInfo);
                             pubList.add(pub_url);
                         }
-
                         progressBar.setVisibility(View.GONE);
                         adapter = new WeiXinChoiceAdapter(getActivity(), choiceInfoList);
                         lv_weixin.setAdapter(adapter);

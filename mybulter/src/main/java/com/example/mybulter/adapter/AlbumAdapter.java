@@ -5,16 +5,15 @@ import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
 import android.view.WindowManager;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 
 import com.example.mybulter.R;
 import com.example.mybulter.info.GirlInfo;
+import com.example.mybulter.util.L;
 import com.squareup.picasso.Picasso;
 
-import java.io.File;
 import java.util.List;
 
 /**
@@ -72,7 +71,7 @@ public class AlbumAdapter extends BaseAdapter {
         if (convertView == null) {
 
             viewHolder = new ViewHolder();
-            convertView = inflater.inflate(R.layout.list_album_image, null);
+            convertView = inflater.inflate(R.layout.list_album_image,parent,false);
             viewHolder.imageView = (ImageView) convertView.findViewById(R.id.iv_list_image);
             convertView.setTag(viewHolder);
         } else {
@@ -80,6 +79,7 @@ public class AlbumAdapter extends BaseAdapter {
         }
 
         String imageUrl = girlInfoList.get(position).getImageUrl();
+        L.d(imageUrl);
         Picasso.with(context).load(imageUrl).resize(width / 2, width / 2).into(viewHolder.imageView);
 
         return convertView;

@@ -64,7 +64,7 @@ public class HomeActivity extends BaseActivity {
     public void initData() {
         titles = getResources().getStringArray(R.array.titles);
 
-        fragment_album = new AlbumFragment();
+        fragment_album = AlbumFragment.getInstance();
         fragment_chat = ChatFragment.getInstance();
         fragment_weixin = WeiXinFragment.getInstance();
         fragment_setting = new SettingFragment();
