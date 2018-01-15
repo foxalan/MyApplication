@@ -71,7 +71,6 @@ public class WeiXinChoiceAdapter extends BaseAdapter {
         if (choiceInfoList.get(position).getImageUrl().equals("")){
 
         }else {
-
             Picasso.with(context).load(choiceInfoList.get(position).getImageUrl()).resize(110,100).into(viewHolder.iv_list_weixin_icon);
         }
 

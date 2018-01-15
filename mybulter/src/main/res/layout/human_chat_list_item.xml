@@ -12,14 +12,16 @@
         android:background="@drawable/user" />
 
     <EditText
-        android:padding="15dp"
-        android:gravity="clip_horizontal"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        android:paddingLeft="25dp"
+        android:paddingRight="25dp"
         android:textSize="@dimen/dimen_size_small"
         android:textColor="@color/white"
         android:id="@+id/et_human_content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toLeftOf="@id/iv_human_icon"
+        android:layout_toStartOf="@id/iv_human_icon"
         android:background="@drawable/chat_bg_user"
         android:focusable="false"
         android:text="你好,我是智能机器人小莫,非常高兴为你服务" />

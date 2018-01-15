@@ -1,7 +1,6 @@
 package com.example.mybulter.fragment;
 
 import android.content.Intent;
-import android.graphics.ImageFormat;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -15,13 +14,6 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.mybulter.R;
-
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-
 import com.example.mybulter.activity.WebViewActivity;
 import com.example.mybulter.adapter.WeiXinChoiceAdapter;
 import com.example.mybulter.constant.Config;
@@ -30,6 +22,10 @@ import com.example.mybulter.info.ChoiceInfo;
 import com.example.mybulter.util.L;
 import com.kymjs.rxvolley.RxVolley;
 import com.kymjs.rxvolley.client.HttpCallback;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,20 +42,20 @@ public class WeiXinFragment extends Fragment {
 
     private static WeiXinFragment weiXinFragment;
 
+    /**
+     * 微信集
+     */
     private List<ChoiceInfo> choiceInfoList = new ArrayList<>();
     private WeiXinChoiceAdapter adapter;
 
     private String url;
-
     private List<String> pubList = new ArrayList<>();
 
     public static WeiXinFragment getInstance() {
 
-
         if (weiXinFragment == null) {
             weiXinFragment = new WeiXinFragment();
         }
-
 
         return weiXinFragment;
     }
@@ -118,6 +114,7 @@ public class WeiXinFragment extends Fragment {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
+            progressBar.setVisibility(View.VISIBLE);
         }
 
         @Override
@@ -129,9 +126,7 @@ public class WeiXinFragment extends Fragment {
                     super.onSuccess(t);
 
                     L.d("onSuccess----------------------------------------");
-
                     JSONObject jsonObject = null;
-
                     L.d(t);
                     choiceInfoList.clear();
 
@@ -152,11 +147,13 @@ public class WeiXinFragment extends Fragment {
                             pubList.add(pub_url);
                         }
 
+                        progressBar.setVisibility(View.GONE);
+                        adapter = new WeiXinChoiceAdapter(getActivity(), choiceInfoList);
+                        lv_weixin.setAdapter(adapter);
+
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
-
-
                 }
 
                 @Override
@@ -176,10 +173,7 @@ public class WeiXinFragment extends Fragment {
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
-            progressBar.setVisibility(View.GONE);
-
-            adapter = new WeiXinChoiceAdapter(getActivity(), choiceInfoList);
-            lv_weixin.setAdapter(adapter);
+            L.d("onPostExecute");
         }
     }
 

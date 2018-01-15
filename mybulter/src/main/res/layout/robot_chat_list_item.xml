@@ -10,6 +10,9 @@
         android:layout_height="wrap_content" />
 
     <EditText
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        android:paddingLeft="30dp"
         android:textColor="@color/white"
         android:id="@+id/et_robot_content"
         android:text="你好,我是智能机器人小莫,非常高兴为你服务"
