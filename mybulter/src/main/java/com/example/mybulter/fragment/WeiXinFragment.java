@@ -121,7 +121,7 @@ public class WeiXinFragment extends Fragment {
                 public void onSuccess(String t) {
                     super.onSuccess(t);
 
-                    L.d("onSuccess----------------------------------------");
+
                     JSONObject jsonObject = null;
                     L.d(t);
                     choiceInfoList.clear();
@@ -137,7 +137,7 @@ public class WeiXinFragment extends Fragment {
                             String pub_url = jsonObject1.getString("url");
 
                             ChoiceInfo choiceInfo = new ChoiceInfo(title, pub, imageUrl);
-                         //   L.d(choiceInfo.toString());
+
                             choiceInfoList.add(choiceInfo);
                             pubList.add(pub_url);
                         }
@@ -167,7 +167,7 @@ public class WeiXinFragment extends Fragment {
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
-            L.d("onPostExecute");
+
         }
     }
 

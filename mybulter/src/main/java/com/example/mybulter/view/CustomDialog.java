@@ -16,8 +16,6 @@ import android.support.annotation.StyleRes;
 import android.view.Gravity;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.example.mybulter.R;
 
@@ -62,8 +60,6 @@ public class CustomDialog extends Dialog {
 
         if (customDialog == null) {
             customDialog = new CustomDialog(context, R.style.MyDialog);
-            //    customDialog.setContentView(R.layout.dialog_sp_sale);
-
             customDialog.getWindow().getAttributes().gravity = Gravity.CENTER;
             customDialog.setCanceledOnTouchOutside(false);
 

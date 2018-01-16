@@ -15,7 +15,6 @@ import android.widget.ImageView;
 import com.example.mybulter.R;
 import com.example.mybulter.adapter.AlbumAdapter;
 import com.example.mybulter.info.GirlInfo;
-import com.example.mybulter.util.L;
 import com.example.mybulter.view.CustomDialog;
 import com.kymjs.rxvolley.RxVolley;
 import com.kymjs.rxvolley.client.HttpCallback;
@@ -103,14 +102,14 @@ public class AlbumFragment extends Fragment {
             e.printStackTrace();
         }
 
-        //    url = "http://gank.io/api/search/query/listview/category/" + welfare + "/count/50/page/1";
+        //url = "http://gank.io/api/search/query/listview/category/" + welfare + "/count/50/page/1";
      //   url = "http://www.mzitu.com/";
-        url = "http://www.narutom.com/pic/naruto_pic/15502.html";
+    //    url = "http://www.narutom.com/pic/naruto_pic/15502.html";
+        url = "http://www.mmjpg.com/";
         RxVolley.get(url, new HttpCallback() {
             @Override
             public void onSuccess(String t) {
                 super.onSuccess(t);
-                L.d("onSuccess album" + t);
                 service.execute(new Runnable() {
                     @Override
                     public void run() {
@@ -120,12 +119,10 @@ public class AlbumFragment extends Fragment {
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
-                        Elements elements = documented.select("div.postlist").select("img");
+                        Elements elements = documented.select("div.pic").select("img");
                         for (int i = 0; i < elements.size(); i++) {
                             String name = elements.get(i).attr("alt");
-                            String url = elements.get(i).attr("data-original");
-                            L.d(name);
-                            L.d(url);
+                            String url = elements.get(i).attr("src");
                             GirlInfo info = new GirlInfo(name, url);
                             girlList.add(info);
                         }
@@ -137,7 +134,7 @@ public class AlbumFragment extends Fragment {
             @Override
             public void onFailure(VolleyError error) {
                 super.onFailure(error);
-                L.d("onFailure album");
+
             }
         });
     }

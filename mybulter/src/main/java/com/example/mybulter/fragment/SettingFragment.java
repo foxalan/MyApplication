@@ -37,6 +37,8 @@ import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
+import static android.app.Activity.RESULT_OK;
+
 
 public class SettingFragment extends Fragment {
 
@@ -119,7 +121,7 @@ public class SettingFragment extends Fragment {
         UtilTools.putImageToShare(getContext(), cir_iv_view);
         file = new File(getActivity().getCacheDir(), fileName);
         if (file.exists()) {
-
+            L.d(file.getAbsolutePath());
             try {
                 fis = new FileInputStream(file.getName());
                 bitmap = BitmapFactory.decodeStream(fis);
@@ -180,9 +182,8 @@ public class SettingFragment extends Fragment {
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (resultCode == getActivity().RESULT_OK)
+        if (resultCode == RESULT_OK){
             switch (requestCode) {
-
                 case CAMERA_REQUEST_CODE:
                     tempFile = new File(Environment.getExternalStorageDirectory(), PHOTO_IMAGE_FILE_NAME);
                     startPhotoZoom(Uri.fromFile(tempFile));
@@ -190,7 +191,6 @@ public class SettingFragment extends Fragment {
                 case PHOTO_REQUEST_CODE:
                     startPhotoZoom(data.getData());
                     break;
-
                 case RESULT_REQUEST_CODE:
                     //有可能点击舍弃
                     if (data != null) {
@@ -212,7 +212,12 @@ public class SettingFragment extends Fragment {
                     cursor.close();
                     L.d(phone_name);
                     L.d(phone_number);
+                    break;
+                default:
+                    break;
             }
+
+        }
     }
 
 
@@ -243,11 +248,16 @@ public class SettingFragment extends Fragment {
         if (bundle != null) {
             Bitmap bitmap = bundle.getParcelable("data");
             file = new File(getActivity().getCacheDir(), fileName);
-            if (file.exists()) {
-                file.delete();
-            }
+            L.d(file.getAbsolutePath());
+
+//            if (file.exists()) {
+//                file.delete();
+//                L.d("delete");
+//            }else {
+//            }
+
             try {
-                FileOutputStream fileOutputStream = new FileOutputStream(file.getName());
+                FileOutputStream fileOutputStream = new FileOutputStream(file);
                 bitmap.compress(Bitmap.CompressFormat.PNG, 90, fileOutputStream);
                 fileOutputStream.flush();
                 fileOutputStream.close();
@@ -269,7 +279,6 @@ public class SettingFragment extends Fragment {
     private void toPhoneNumber() {
         Intent intent = new Intent(Intent.ACTION_PICK);
         intent.setData(ContactsContract.Contacts.CONTENT_URI);
-        //    intent.setType("text");
         startActivityForResult(intent, PHONE_NUMBER_REQUEST_CODE);
     }
 }

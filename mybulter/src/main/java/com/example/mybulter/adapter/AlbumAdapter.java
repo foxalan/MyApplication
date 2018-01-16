@@ -11,7 +11,6 @@ import android.widget.ImageView;
 
 import com.example.mybulter.R;
 import com.example.mybulter.info.GirlInfo;
-import com.example.mybulter.util.L;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -79,9 +78,7 @@ public class AlbumAdapter extends BaseAdapter {
         }
 
         String imageUrl = girlInfoList.get(position).getImageUrl();
-        L.d(imageUrl);
         Picasso.with(context).load(imageUrl).resize(width / 2, width / 2).into(viewHolder.imageView);
-
         return convertView;
     }
 
