@@ -1,5 +1,6 @@
 package com.example.mybulter.fragment;
 
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
@@ -19,6 +20,8 @@ import android.widget.AdapterView;
 import android.widget.Button;
 
 import com.example.mybulter.R;
+import com.example.mybulter.activity.PhoneQueryActivity;
+import com.example.mybulter.activity.UserActivity;
 import com.example.mybulter.adapter.SettingAdapter;
 import com.example.mybulter.data.ListSource;
 import com.example.mybulter.info.SettingInfo;
@@ -110,7 +113,28 @@ public class SettingFragment extends Fragment {
         setListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                //         MyToast.showMessage("点击了第" + position + "页");
+
+                switch (position){
+                    //个人信息
+                    case 0:
+                        startActivity(new Intent(getActivity(),UserActivity.class));
+                        break;
+                    //归属地查询
+                    case 1:
+                        startActivity(new Intent(getActivity(),PhoneQueryActivity.class));
+                        break;
+                    /**
+                     * 检查更新
+                     */
+                    case 2:
+
+                        break;
+                    case 3:
+
+                        break;
+                    default:
+                        break;
+                }
             }
         });
     }
@@ -250,20 +274,18 @@ public class SettingFragment extends Fragment {
             file = new File(getActivity().getCacheDir(), fileName);
             L.d(file.getAbsolutePath());
 
-//            if (file.exists()) {
-//                file.delete();
-//                L.d("delete");
-//            }else {
-//            }
-
             try {
-                FileOutputStream fileOutputStream = new FileOutputStream(file);
+
+                FileOutputStream fileOutputStream = getActivity().openFileOutput(file.getAbsolutePath(), Context.MODE_PRIVATE);
                 bitmap.compress(Bitmap.CompressFormat.PNG, 90, fileOutputStream);
                 fileOutputStream.flush();
                 fileOutputStream.close();
+                L.d("close");
             } catch (FileNotFoundException e) {
+                L.d("close"+"file not found");
                 e.printStackTrace();
             } catch (IOException e) {
+                L.d("close"+"ioe");
                 e.printStackTrace();
             }
             cir_iv_view.setImageBitmap(bitmap);
