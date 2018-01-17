@@ -29,7 +29,7 @@ import java.lang.reflect.Method;
  * Input Parameter:用于查询手机号
  */
 
-public class PhoneQueryActivity extends BaseActivity implements IQueryPhoneView{
+public class PhoneQueryActivity extends BaseActivity implements IQueryPhoneView {
 
     private EditText et_query_phone;
     private ImageView iv_phone_area;
@@ -67,7 +67,7 @@ public class PhoneQueryActivity extends BaseActivity implements IQueryPhoneView{
 
         ctx = this;
 
-        keyboardUtil = new KeyboardUtil(PhoneQueryActivity.this,ctx,et_query_phone);
+        keyboardUtil = new KeyboardUtil(PhoneQueryActivity.this, ctx, et_query_phone);
         queryPhonePresenter = new QueryPhonePresenterImpl(this);
 
         tv_phone_province = (TextView) findViewById(R.id.tv_phone_province);
@@ -79,11 +79,12 @@ public class PhoneQueryActivity extends BaseActivity implements IQueryPhoneView{
 
     }
 
+    private int phoneCount = 11;
+
     @Override
     public void initEvent() {
 
         disableShowSoftInput(et_query_phone);
-
         et_query_phone.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -97,7 +98,12 @@ public class PhoneQueryActivity extends BaseActivity implements IQueryPhoneView{
             @Override
             public void onClick(View v) {
                 keyboardUtil.hideKeyboard();
-                queryPhonePresenter.query(et_query_phone.getText().toString());
+                String number = et_query_phone.getText().toString();
+                if ("".equals(number) || (number.length() != phoneCount)) {
+                    MyToast.showMessage("手机号码格式不正确");
+                } else {
+                    queryPhonePresenter.query(number);
+                }
             }
         });
     }
@@ -166,7 +172,7 @@ public class PhoneQueryActivity extends BaseActivity implements IQueryPhoneView{
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == android.R.id.home){
+        if (item.getItemId() == android.R.id.home) {
             finish();
         }
 

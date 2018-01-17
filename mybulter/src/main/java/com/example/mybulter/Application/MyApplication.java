@@ -1,8 +1,10 @@
 package com.example.mybulter.Application;
 
 import android.app.Application;
+import android.view.LayoutInflater;
 
 import com.example.mybulter.constant.Constant;
+import com.example.mybulter.view.MyToast;
 import com.iflytek.cloud.SpeechConstant;
 import com.iflytek.cloud.SpeechUtility;
 
@@ -29,6 +31,7 @@ public class MyApplication extends Application {
 
         SpeechUtility.createUtility(getApplicationContext(), SpeechConstant.APPID + "=" + VOICE_KEY);
 
+        MyToast.init(this, LayoutInflater.from(this));
 
     }
 
