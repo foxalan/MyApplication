@@ -115,7 +115,7 @@ public class HomeActivity extends BaseActivity {
                 if (position == 0) {
                     floatingActionButton.setVisibility(View.GONE);
                 } else {
-                    floatingActionButton.setVisibility(View.VISIBLE);
+                    floatingActionButton.setVisibility(View.GONE);
                 }
 
             }

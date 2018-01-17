@@ -1,11 +1,14 @@
 package com.example.mybulter.activity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.example.mybulter.R;
 import com.example.mybulter.util.UtilTools;
+import com.example.mybulter.view.MyToast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,8 +44,20 @@ public class AboutActivity extends BaseHomeActivity {
         mList.add(getString(R.string.text_version) + UtilTools.getVersion(this));
         mList.add(getString(R.string.text_website_address));
 
-        mAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,mList);
+        mAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, mList);
         //设置适配器
         mListView.setAdapter(mAdapter);
+        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                switch (position) {
+                    case 2:
+                        MyToast.showMessage("click update");
+                        break;
+                    default:
+                        break;
+                }
+            }
+        });
     }
 }

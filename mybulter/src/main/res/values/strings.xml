@@ -46,7 +46,7 @@
     <string name="text_two_input_not_consistent">两次输入的密码不一致</string>
     <string name="text_app_name">应用名:</string>
     <string name="text_version">版本号:</string>
-    <string name="text_website_address">官网:www.imooc.com</string>
+    <string name="text_website_address">检查更新</string>
     <string name="text_email_send_ok">邮箱已经发送至：</string>
     <string name="text_email_send_no">邮箱发送失败</string>
     <string name="reset_successfully">重置密码成功</string>
