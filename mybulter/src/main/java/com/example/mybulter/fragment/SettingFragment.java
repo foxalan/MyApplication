@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -29,6 +31,7 @@ import com.example.mybulter.info.SettingInfo;
 import com.example.mybulter.util.L;
 import com.example.mybulter.util.UtilTools;
 import com.example.mybulter.view.CustomDialog;
+import com.example.mybulter.view.MyToast;
 import com.example.mybulter.view.SetListView;
 
 import java.io.File;
@@ -115,14 +118,14 @@ public class SettingFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                switch (position){
+                switch (position) {
                     //个人信息
                     case 0:
-                        startActivity(new Intent(getActivity(),UserActivity.class));
+                        startActivity(new Intent(getActivity(), UserActivity.class));
                         break;
                     //归属地查询
                     case 1:
-                        startActivity(new Intent(getActivity(),PhoneQueryActivity.class));
+                        startActivity(new Intent(getActivity(), PhoneQueryActivity.class));
                         break;
                     /**
                      * 检查更新
@@ -131,6 +134,30 @@ public class SettingFragment extends Fragment {
                         startActivity(new Intent(getActivity(), AboutActivity.class));
                         break;
                     case 3:
+                        int type = getNetype(getActivity());
+                        //返回值 -1：没有网络  1：WIFI网络2：wap网络3：net网络
+                        switch (type) {
+                            case -1:
+                                MyToast.showMessage("当前网络异常");
+                                break;
+                            case 1:
+                                if (isWifiConnected(getActivity())) {
+                                    MyToast.showMessage("已连接Wifi");
+                                } else {
+                                    MyToast.showMessage("当前Wifi不可用");
+                                }
+                                break;
+                            case 2:
+                                if (isMobileConnected(getActivity())) {
+                                    MyToast.showMessage("正在使用Wap网络");
+                                } else {
+                                    MyToast.showMessage("当前网络不可用");
+                                }
+                                break;
+                            default:
+                                break;
+
+                        }
 
                         break;
                     default:
@@ -207,7 +234,7 @@ public class SettingFragment extends Fragment {
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (resultCode == RESULT_OK){
+        if (resultCode == RESULT_OK) {
             switch (requestCode) {
                 case CAMERA_REQUEST_CODE:
                     tempFile = new File(Environment.getExternalStorageDirectory(), PHOTO_IMAGE_FILE_NAME);
@@ -283,10 +310,10 @@ public class SettingFragment extends Fragment {
                 fileOutputStream.close();
                 L.d("close");
             } catch (FileNotFoundException e) {
-                L.d("close"+"file not found");
+                L.d("close" + "file not found");
                 e.printStackTrace();
             } catch (IOException e) {
-                L.d("close"+"ioe");
+                L.d("close" + "ioe");
                 e.printStackTrace();
             }
             cir_iv_view.setImageBitmap(bitmap);
@@ -303,5 +330,51 @@ public class SettingFragment extends Fragment {
         Intent intent = new Intent(Intent.ACTION_PICK);
         intent.setData(ContactsContract.Contacts.CONTENT_URI);
         startActivityForResult(intent, PHONE_NUMBER_REQUEST_CODE);
+    }
+
+    public int getNetype(Context context) {
+        int netType = -1;
+        ConnectivityManager connMgr = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
+        if (networkInfo == null) {
+            return netType;
+        }
+        int nType = networkInfo.getType();
+        if (nType == ConnectivityManager.TYPE_MOBILE) {
+            if (networkInfo.getExtraInfo().toLowerCase().equals("cmnet")) {
+                netType = 3;
+            } else {
+                netType = 2;
+            }
+        } else if (nType == ConnectivityManager.TYPE_WIFI) {
+            netType = 1;
+        }
+        return netType;
+    }
+
+    public boolean isWifiConnected(Context context) {
+        if (context != null) {
+            ConnectivityManager mConnectivityManager = (ConnectivityManager) context
+                    .getSystemService(Context.CONNECTIVITY_SERVICE);
+            NetworkInfo mWiFiNetworkInfo = mConnectivityManager
+                    .getNetworkInfo(ConnectivityManager.TYPE_WIFI);
+            if (mWiFiNetworkInfo != null) {
+                return mWiFiNetworkInfo.isAvailable();
+            }
+        }
+        return false;
+    }
+
+    public boolean isMobileConnected(Context context) {
+        if (context != null) {
+            ConnectivityManager mConnectivityManager = (ConnectivityManager) context
+                    .getSystemService(Context.CONNECTIVITY_SERVICE);
+            NetworkInfo mMobileNetworkInfo = mConnectivityManager
+                    .getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
+            if (mMobileNetworkInfo != null) {
+                return mMobileNetworkInfo.isAvailable();
+            }
+        }
+        return false;
     }
 }

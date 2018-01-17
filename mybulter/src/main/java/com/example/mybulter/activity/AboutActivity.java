@@ -25,13 +25,8 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-/*
- *项目名： SmartButler
- *包名：   com.imooc.smartbutler.ui
- *文件名:  AboutActivity
- *创建者:  LGL
- *创建时间:2016/12/1223:00
- *描述:    关于软件
+/**
+ * @author Alan
  */
 public class AboutActivity extends BaseHomeActivity {
 

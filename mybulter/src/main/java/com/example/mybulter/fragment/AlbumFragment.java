@@ -113,6 +113,7 @@ public class AlbumFragment extends Fragment {
                 service.execute(new Runnable() {
                     @Override
                     public void run() {
+
                         Document documented = null;
                         try {
                             documented = Jsoup.connect(url).get();
