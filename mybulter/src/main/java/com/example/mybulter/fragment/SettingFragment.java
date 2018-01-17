@@ -20,6 +20,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 
 import com.example.mybulter.R;
+import com.example.mybulter.activity.AboutActivity;
 import com.example.mybulter.activity.PhoneQueryActivity;
 import com.example.mybulter.activity.UserActivity;
 import com.example.mybulter.adapter.SettingAdapter;
@@ -127,7 +128,7 @@ public class SettingFragment extends Fragment {
                      * 检查更新
                      */
                     case 2:
-
+                        startActivity(new Intent(getActivity(), AboutActivity.class));
                         break;
                     case 3:
 

@@ -37,7 +37,7 @@ public class ListSource {
 
         SettingInfo settingInfo_1 = new SettingInfo(bitmap_1, "个人信息");
         SettingInfo settingInfo_2 = new SettingInfo(bitmap_2, "归属地查询");
-        SettingInfo settingInfo_3 = new SettingInfo(bitmap_3, "检查更新");
+        SettingInfo settingInfo_3 = new SettingInfo(bitmap_3, "关于软件");
         SettingInfo settingInfo_4 = new SettingInfo(bitmap_4, "网络状态");
 
         settingInfoList.add(settingInfo_1);

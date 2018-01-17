@@ -79,6 +79,10 @@
             android:theme="@style/SettingTheme"
             android:label="个人信息"/>
 
+        <activity android:name=".activity.AboutActivity"
+            android:theme="@style/SettingTheme"
+            android:label="关于软件"/>
+
         <activity android:name=".activity.WebViewActivity"
             android:theme="@style/SettingTheme"/>
     </application>
