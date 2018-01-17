@@ -15,4 +15,11 @@
         <item>我的设置</item>
     </string-array>
 
+    <string-array name="user">
+        <item>昵称</item>
+        <item>邮箱</item>
+        <item>年龄</item>
+        <item>简介</item>
+    </string-array>
+
 </resources>

@@ -1,39 +1,30 @@
 package com.example.mybulter.adapter;
 
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.BaseAdapter;
+import android.content.Context;
+
+import com.example.mybulter.R;
+import com.example.mybulter.info.UserBean;
+
+import java.util.List;
 
 /**
  * Function :
  * Modify Date : 2018/1/16
- *
  * @Author : Alan
  * Issue : TODO
  * Whether Solve :
  */
 
-public class UserAdapter extends BaseAdapter {
+public class UserAdapter extends CustomAdapter<UserBean> {
 
 
-
-    @Override
-    public int getCount() {
-        return 0;
+    public UserAdapter(Context mContext, List<UserBean> mData, int resID) {
+        super(mContext, mData, resID);
     }
 
     @Override
-    public Object getItem(int position) {
-        return null;
-    }
-
-    @Override
-    public long getItemId(int position) {
-        return 0;
-    }
-
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        return null;
+    public void convert(CustomViewHolder viewHolder, int position) {
+        viewHolder.setText(mData.get(position).getItem(), R.id.tv_user_item);
+        viewHolder.setText(mData.get(position).getContent(),R.id.tv_user_content);
     }
 }
