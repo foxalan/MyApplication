@@ -14,6 +14,7 @@ import android.util.TypedValue;
 import android.view.View;
 
 import com.example.adanvace.R;
+import com.example.adanvace.util.DimenUtil;
 
 /**
  * Function Name : TODO
@@ -28,12 +29,12 @@ public class CustomView extends View {
     private String text;
     private Bitmap bitmap;
     private int textSize;
-
-
     private Paint mPaint;
 
     private int mWidth;
     private int mHeight;
+    private int mSrceenWidth;
+    private int mScreenHeight;
 
     private Rect mTextBound;
 
@@ -45,15 +46,12 @@ public class CustomView extends View {
 
     public CustomView(Context context, @Nullable AttributeSet attrs) {
         this(context, attrs, 0);
-
     }
 
     public CustomView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
 
         TypedArray typedArray = context.getTheme().obtainStyledAttributes(attrs, R.styleable.CustomView, defStyleAttr, 0);
-
-
         int n = typedArray.getIndexCount();
         /**
          * 使用case时有一个问题,当没有定义属性的时候拿不到默认值
@@ -76,12 +74,13 @@ public class CustomView extends View {
                     textSize = typedArray.getDimensionPixelSize(attr, (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP,
                             16, getResources().getDisplayMetrics()));
                     break;
+                default:
+                    break;
 
             }
         }
 
-        //    bitmap = BitmapFactory.decodeResource(getResources(),typedArray.getResourceId(R.styleable.CustomView_image,0));
-
+        typedArray.recycle();
         init();
     }
 
@@ -95,7 +94,6 @@ public class CustomView extends View {
         mPaint.getTextBounds(text, 0, text.length(), mTextBound);
 
         rect = new Rect();
-
     }
 
     /**
@@ -111,18 +109,20 @@ public class CustomView extends View {
 
         mHeight = MeasureSpec.getSize(heightMeasureSpec);
         mWidth = MeasureSpec.getSize(widthMeasureSpec);
+        mSrceenWidth = DimenUtil.getScreenWidth();
+        mScreenHeight = DimenUtil.getScreenHeight();
 
         int widthSpec = MeasureSpec.getMode(widthMeasureSpec);
-
         int textWidth = mTextBound.width() + getPaddingLeft() + getPaddingRight();
         int imageWidth = bitmap.getWidth() + getPaddingRight() + getPaddingLeft();
         int maxWidth = Math.max(textWidth, imageWidth);
 
         switch (widthSpec) {
-
             case MeasureSpec.EXACTLY:
                 mWidth = Math.max(maxWidth, mWidth);
                 break;
+            case MeasureSpec.UNSPECIFIED:
+            case MeasureSpec.AT_MOST:
             default:
                 mWidth = Math.max(textWidth, imageWidth);
                 break;
@@ -135,11 +135,15 @@ public class CustomView extends View {
             case MeasureSpec.EXACTLY:
                 mHeight = Math.max(mHeight, minHeight);
                 break;
+            case MeasureSpec.UNSPECIFIED:
+            case MeasureSpec.AT_MOST:
             default:
                 mHeight = minHeight;
                 break;
         }
 
+        mWidth = Math.min(mWidth, mSrceenWidth);
+        mHeight = Math.min(mHeight, mScreenHeight);
         setMeasuredDimension(mWidth, mHeight);
 
     }

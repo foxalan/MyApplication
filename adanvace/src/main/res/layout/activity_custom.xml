@@ -11,7 +11,7 @@
         android:layout_width="300dp"
         android:layout_height="300dp"
         app:image="@drawable/ic_main"
-        app:text="我的管用hello world with all my great wish the world became better"
+        app:text=" with all my great wish the world better"
         app:textColor="@color/colorAccent"
         app:textSize="25sp"/>
 
@@ -27,16 +27,16 @@
         app:textColor="@color/colorPrimary"
         app:textSize="20sp"/>
 
-    <com.example.adanvace.view.CustomView
-        android:paddingBottom="5dp"
-        android:background="@color/lightgray"
-        android:layout_marginTop="20dp"
-        android:layout_width="wrap_content"
-        android:layout_height="100dp"
-        app:image="@drawable/ic_main"
-        app:text="天下第一"
-        app:textColor="@color/colorPrimaryDark"
-        app:textSize="15sp"/>
+    <!--<com.example.adanvace.view.CustomView-->
+        <!--android:paddingBottom="5dp"-->
+        <!--android:background="@color/lightgray"-->
+        <!--android:layout_marginTop="20dp"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="100dp"-->
+        <!--app:image="@drawable/ic_main"-->
+        <!--app:text="天下第一"-->
+        <!--app:textColor="@color/colorPrimaryDark"-->
+        <!--app:textSize="15sp"/>-->
 
 
 
