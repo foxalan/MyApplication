@@ -85,6 +85,8 @@
         <activity android:name=".activity.viewgroup.HorizontalScrollViewActivity" />
 
         <activity android:name=".activity.viewgroup.JigsawActivity"/>
+
+        <activity android:name=".activity.view.SignActivity"/>
     </application>
 
 </manifest>

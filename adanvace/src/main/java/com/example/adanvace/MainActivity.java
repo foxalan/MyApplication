@@ -13,6 +13,7 @@ import com.example.adanvace.activity.view.LotteryActivity;
 import com.example.adanvace.activity.view.RadiusActivity;
 import com.example.adanvace.activity.view.RefreshListViewActivity;
 import com.example.adanvace.activity.view.ScrollViewActivity;
+import com.example.adanvace.activity.view.SignActivity;
 import com.example.adanvace.activity.view.SoundActivity;
 import com.example.adanvace.activity.view.VerticalActivity;
 import com.example.adanvace.activity.view.ViewPagerActivity;
@@ -94,6 +95,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.bt_jigsaw:
                 startActivity(new Intent(MainActivity.this, JigsawActivity.class));
+                break;
+            case R.id.bt_sign:
+                startActivity(new Intent(MainActivity.this, SignActivity.class));
                 break;
             default:
                 break;
