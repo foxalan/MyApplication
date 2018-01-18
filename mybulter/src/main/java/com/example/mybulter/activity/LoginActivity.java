@@ -1,6 +1,7 @@
 package com.example.mybulter.activity;
 
 import android.content.Intent;
+import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
@@ -8,11 +9,15 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.mybulter.R;
+import com.example.mybulter.info.MyUser;
 import com.example.mybulter.util.ShareUtils;
 import com.example.mybulter.view.CustomDialog;
 
+import cn.bmob.v3.exception.BmobException;
+import cn.bmob.v3.listener.SaveListener;
 import config.Config;
 
 /**
@@ -67,9 +72,14 @@ public class LoginActivity extends BaseActivity {
         if (keepPassword) {
             mKeepPassword.setChecked(true);
             //todo
+            String userName = ShareUtils.getString(LoginActivity.this, "username", "");
+            String password = ShareUtils.getString(LoginActivity.this, "password", "");
+            mEditUserName.setText(userName);
+            mEditPassword.setText(password);
         } else {
             mKeepPassword.setChecked(false);
         }
+
 
         mKeepPassword.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -90,39 +100,40 @@ public class LoginActivity extends BaseActivity {
             switch (v.getId()) {
                 case R.id.bt_login:
                     //1.获取输入框的值
-                    String name = mEditUserName.getText().toString().trim();
-                    String password = mEditPassword.getText().toString().trim();
+                    final String name = mEditUserName.getText().toString().trim();
+                    final String password = mEditPassword.getText().toString().trim();
 
-                    startActivity(new Intent(LoginActivity.this, HomeActivity.class));
 
-//                    if (!TextUtils.isEmpty(name) & !TextUtils.isEmpty(password)) {
-//                        dialog.show();
-//                        //登录
-//                        final MyUser user = new MyUser();
-//                        user.setUsername(name);
-//                        user.setPassword(password);
-//                        user.login(new SaveListener<MyUser>() {
-//                            @Override
-//                            public void done(MyUser myUser, BmobException e) {
-//                                startActivity(new Intent(LoginActivity.this, HomeActivity.class));
-//                                dialog.dismiss();
-//                                //判断结果
-//                                if (e == null) {
-//                                    //判断邮箱是否验证
-//                                    if (user.getEmailVerified()) {
-//                                        //跳转
-//                                        finish();
-//                                    } else {
-//                                        Toast.makeText(LoginActivity.this, "请前往邮箱验证", Toast.LENGTH_SHORT).show();
-//                                    }
-//                                } else {
-//                                    Toast.makeText(LoginActivity.this, "登录失败：" + e.toString(), Toast.LENGTH_SHORT).show();
-//                                }
-//                            }
-//                        });
-//                    } else {
-//                        Toast.makeText(LoginActivity.this, "输入框不能为空", Toast.LENGTH_SHORT).show();
-//                    }
+                    if (!TextUtils.isEmpty(name) & !TextUtils.isEmpty(password)) {
+                        dialog.show();
+                        //登录
+                        final MyUser user = new MyUser();
+                        user.setUsername(name);
+                        user.setPassword(password);
+                        user.login(new SaveListener<MyUser>() {
+                            @Override
+                            public void done(MyUser myUser, BmobException e) {
+                                dialog.dismiss();
+                                //判断结果
+                                if (e == null) {
+                                    //判断邮箱是否验证
+                                    if (user.getEmailVerified()) {
+                                        //跳转
+                                        ShareUtils.putString(LoginActivity.this, "username", name);
+                                        ShareUtils.putString(LoginActivity.this, "password", password);
+                                        startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+                                        finish();
+                                    } else {
+                                        Toast.makeText(LoginActivity.this, "请前往邮箱验证", Toast.LENGTH_SHORT).show();
+                                    }
+                                } else {
+                                    Toast.makeText(LoginActivity.this, "登录失败：" + e.toString(), Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
+                    } else {
+                        Toast.makeText(LoginActivity.this, "输入框不能为空", Toast.LENGTH_SHORT).show();
+                    }
                     break;
                 case R.id.bt_register:
                     startActivity(new Intent(LoginActivity.this, RegisteredActivity.class));
@@ -130,6 +141,7 @@ public class LoginActivity extends BaseActivity {
                 case R.id.tv_forget_password:
                     startActivity(new Intent(LoginActivity.this, ForgetPasswordActivity.class));
                     break;
+
                 default:
                     break;
             }

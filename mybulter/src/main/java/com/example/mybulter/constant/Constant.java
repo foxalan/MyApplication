@@ -16,7 +16,8 @@ public class Constant {
 
     public int List_TYPE_HUMEN = 2;
 
-    public static final String BMOB_APP_ID = "2a918f5aecd6ef04a8c05b24528a6e49";
+   // public static final String BMOB_APP_ID = "2a918f5aecd6ef04a8c05b24528a6e49";
+    public static final String BMOB_APP_ID = "752808db335cdce2aea8781721ccd04d";
 
     public static final String USER_NAME = "user_name";
 

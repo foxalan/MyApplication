@@ -89,6 +89,8 @@ public class MainActivity extends AppCompatActivity {
             case R.id.bt_jigsaw:
                 startActivity(new Intent(MainActivity.this, JigsawActivity.class));
                 break;
+            default:
+                break;
 
         }
     }

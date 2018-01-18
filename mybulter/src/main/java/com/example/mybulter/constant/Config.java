@@ -14,4 +14,8 @@ public class Config {
 
     //微信原地址的ＵＲＬ
     public final static String WEIXIN_URL = "url";
+
+    public final static String USERNAME = "username";
+
+    public final static String PASSWORD = "password";
 }

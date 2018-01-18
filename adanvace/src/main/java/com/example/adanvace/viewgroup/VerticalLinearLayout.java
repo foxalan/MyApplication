@@ -11,11 +11,11 @@ import android.view.ViewConfiguration;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Scroller;
-import android.widget.Switch;
 
 /**
  * Function Name : TODO
- * Author : Alan
+ *
+ * @Author : Alan
  * Modify Date : 2/8/17$
  * Input Parameter &自定义的ViewPager
  */
@@ -110,6 +110,8 @@ public class VerticalLinearLayout extends ViewGroup {
      * @return
      */
 
+    private int pageCount = 2;
+
     @Override
     public boolean onTouchEvent(MotionEvent event) {
 
@@ -127,7 +129,7 @@ public class VerticalLinearLayout extends ViewGroup {
             case MotionEvent.ACTION_DOWN:
                 mScrollStartY = getScrollY();
                 endY = y;
-             //   Log.d("TANG", "endY:" + endY);
+                //   Log.d("TANG", "endY:" + endY);
                 break;
             case MotionEvent.ACTION_MOVE:
 
@@ -139,7 +141,6 @@ public class VerticalLinearLayout extends ViewGroup {
                 }
 
                 int dy = endY - y;
-
                 // 边界值检查
                 int scrollY = getScrollY();
                 // 已经到达顶端，下拉多少，就往上滚动多少
@@ -148,16 +149,12 @@ public class VerticalLinearLayout extends ViewGroup {
                     dy = -scrollY;
                     //dy = 0;
                 }
-                // 已经到达底部，上拉多少，就往下滚动多少
-                if (dy > 0 && scrollY + dy > getHeight() - mScreenHeight) {
-
-                    dy = getHeight() - mScreenHeight - scrollY;
+//                // 已经到达底部，上拉多少，就往下滚动多少
+                if (dy > 0 && (scrollY + dy > pageCount * mScreenHeight)) {
+                    Log.e("tang", dy + "===" + scrollY + "===" + getMeasuredHeight() + "===" + mScreenHeight);
+                    dy =  mScreenHeight*2 - scrollY;
                 }
-
-                //   Log.d("TANG","y:"+y);
-                //   Log.d("TANG","scrollY"+scrollY);
-                //    Log.d("TANG", "getHeight():" + getHeight() + "===mScreenHeight" + mScreenHeight);
-
+                Log.e("tang", dy + "===============");
                 scrollBy(0, dy);
                 endY = y;
                 break;
@@ -179,13 +176,8 @@ public class VerticalLinearLayout extends ViewGroup {
                      */
                     if (dScrollY > mScreenHeight / 2 || Math.abs(getVelocity()) > 600) {
                         scroller.startScroll(0, getScrollY(), 0, mScreenHeight - dScrollY);
-
-
-
                     } else {
-
                         scroller.startScroll(0, getScrollY(), 0, -dScrollY);
-
                     }
                 }
 
@@ -197,15 +189,12 @@ public class VerticalLinearLayout extends ViewGroup {
                     } else {
                         scroller.startScroll(0, getScrollY(), 0, -dScrollY);
                     }
-
-
                 }
-
                 isScrolling = true;
                 postInvalidate();
-
                 recycleVelocity();
-
+                break;
+            default:
                 break;
         }
 
@@ -229,7 +218,7 @@ public class VerticalLinearLayout extends ViewGroup {
 
         if (scroller.computeScrollOffset()) {
             scrollTo(0, scroller.getCurrY());
-            Log.d("TANG",scroller.getCurrY()+"================================");
+            Log.d("TANG", scroller.getCurrY() + "================================");
             postInvalidate();
         } else {
 
