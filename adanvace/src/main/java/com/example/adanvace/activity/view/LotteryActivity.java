@@ -2,7 +2,6 @@ package com.example.adanvace.activity.view;
 
 import android.animation.Animator;
 import android.animation.ObjectAnimator;
-import android.animation.ValueAnimator;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -10,7 +9,6 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.example.adanvace.R;
-import com.example.adanvace.util.L;
 import com.example.adanvace.view.MyToast;
 
 import java.util.Random;
@@ -26,13 +24,9 @@ import java.util.Random;
 public class LotteryActivity extends BaseActivity {
 
     private ImageView iv_start;
-
     private int currentPosition = 0;
-
     private String[] titles = {"单反相机", "再来一次", "恭喜发财", "IPAD", "IPHONE", "妹子一只"};
-
     private int next;
-
     private boolean isStart = false;
 
     @Override
@@ -62,7 +56,6 @@ public class LotteryActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
 
-
                 if (!isStart) {
                     isStart = true;
                     Random random = new Random();
@@ -82,7 +75,6 @@ public class LotteryActivity extends BaseActivity {
                             int position = currentPosition - 360 * count;
                             if (position > 30 && position < 90) {
                                 MyToast.showMessage(titles[5]);
-
                             } else if (position > 90 && position < 150) {
                                 MyToast.showMessage(titles[0]);
                             } else if (position > 150 && position < 210) {

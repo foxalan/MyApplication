@@ -1,1 +1,1 @@
-include ':app', ':frequentview', ':netdemo', ':databasedemo', ':mybulter', ':modeldemo', ':adanvace', ':sportlogs'
+include ':app', ':netdemo', ':mybulter', ':modeldemo', ':adanvace', ':sportlogs'

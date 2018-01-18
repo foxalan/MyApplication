@@ -25,6 +25,10 @@ import com.example.adanvace.activity.viewgroup.RecyclerActivity;
 import com.example.adanvace.activity.viewgroup.ViewGroupActivity;
 import com.example.adanvace.application.MyApp;
 
+/**
+ * @author Alan
+ */
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
