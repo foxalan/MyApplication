@@ -7,7 +7,7 @@ import com.example.adanvace.R;
 
 /**
  * Function Name : TODO
- * Author : Alan
+ * @Author : Alan
  * Modify Date : 4/8/17$
  * Input Parameter &
  */

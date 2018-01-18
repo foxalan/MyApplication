@@ -5,17 +5,12 @@ import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.Path;
 import android.graphics.RectF;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.View;
 
 import com.example.adanvace.R;
-
-import java.util.Timer;
-import java.util.TimerTask;
 
 /**
  * Function Name : TODO
@@ -116,8 +111,6 @@ public class RadiusView extends View {
                     }
 
                     progress++;
-
-
                 }
             }
         }.start();
@@ -172,7 +165,8 @@ public class RadiusView extends View {
         canvas.drawCircle(mWidth / 2, mWidth / 2, radius, mPaint);
 
         mPaint.setColor(run_color);
-        canvas.drawArc(radiuRect, progress - 180, 180, false, mPaint); // 根据进度画圆弧
+        canvas.drawArc(radiuRect, progress - 180, 180, false, mPaint);
+        // 根据进度画圆弧
 
     }
 }

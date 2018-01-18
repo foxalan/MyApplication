@@ -6,8 +6,9 @@
     android:orientation="vertical">
 
     <com.example.adanvace.view.SoundView
-        android:layout_width="400dp"
-        android:layout_height="400dp"
+        android:layout_gravity="center"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
         app:firstColor="@color/blue"
         app:secondColor="@color/colorBt_bg"
         app:round_count="12"
@@ -15,11 +16,13 @@
 
 
     <com.example.adanvace.view.SoundView
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:firstColor="@color/myBarColor"
         app:secondColor="@color/colorBt_bg"
-        app:round_count="12"
+        app:round_count="9"
         app:round_size="25sp"/>
 
 </LinearLayout>

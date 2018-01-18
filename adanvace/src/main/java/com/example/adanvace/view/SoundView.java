@@ -18,7 +18,7 @@ import com.example.adanvace.R;
 
 /**
  * Function Name : TODO
- * Author : Alan
+ * @Author : Alan
  * Modify Date : 5/8/17
  * Input Parameter & 待优化的地方
  * 1.自定义属性中少了间距
@@ -32,28 +32,17 @@ public class SoundView extends View {
     private int secondColor;
     private int totalCount;
     private int round_size;
-
     private int mWidth;
     private int mHeight;
-
     private Paint mPaint;
-
     private int radius;
     private RectF rectF;
-
     private RectF sound_rect;
-
     private int sound_radius;
-
     private Bitmap bitmap;
-
     private int currentCount = 5;
-
     private int mSplitSize;
-
     private float itemSize;
-
-
     int currentY;
     int downY;
 
@@ -97,7 +86,7 @@ public class SoundView extends View {
         mPaint.setAntiAlias(true);
         mPaint.setStyle(Paint.Style.STROKE);
 
-        mPaint.setStrokeCap(Paint.Cap.ROUND); //
+        mPaint.setStrokeCap(Paint.Cap.ROUND);
 
     }
 
@@ -114,10 +103,12 @@ public class SoundView extends View {
                 mWidth = MeasureSpec.getSize(widthMeasureSpec) + getPaddingLeft() + getPaddingRight();
                 break;
             case MeasureSpec.AT_MOST:
-                mWidth = 300;
+                mWidth = 600;
                 break;
             case MeasureSpec.UNSPECIFIED:
-                mWidth = 300;
+                mWidth = 600;
+                break;
+            default:
                 break;
         }
 
@@ -126,10 +117,12 @@ public class SoundView extends View {
                 mHeight = MeasureSpec.getSize(heightMeasureSpec) + getPaddingLeft() + getPaddingRight();
                 break;
             case MeasureSpec.AT_MOST:
-                mHeight = 300;
+                mHeight = 600;
                 break;
             case MeasureSpec.UNSPECIFIED:
-                mHeight = 300;
+                mHeight = 600;
+                break;
+            default:
                 break;
         }
 
@@ -173,9 +166,9 @@ public class SoundView extends View {
 
         /**
          * oval :指定圆弧的外轮廓矩形区域。
-           startAngle: 圆弧起始角度，单位为度。
-           sweepAngle: 圆弧扫过的角度，顺时针方向，单位为度,从右中间开始为零度。
-           useCenter: 如果为True时，在绘制圆弧时将圆心包括在内，通常用来绘制扇形。关键是这个变量，下面将会详细介绍。
+         startAngle: 圆弧起始角度，单位为度。
+         sweepAngle: 圆弧扫过的角度，顺时针方向，单位为度,从右中间开始为零度。
+         useCenter: 如果为True时，在绘制圆弧时将圆心包括在内，通常用来绘制扇形。关键是这个变量，下面将会详细介绍。
          */
         canvas.drawBitmap(bitmap, null, rectF, mPaint);
         //   canvas.drawRect(rectF, mPaint);
@@ -186,13 +179,15 @@ public class SoundView extends View {
 
         mPaint.setColor(firstColor);
         for (int i = 0; i < totalCount; i++) {
-            canvas.drawArc(sound_rect, i * (itemSize + mSplitSize), itemSize, false, mPaint); // 根据进度画圆弧
+            canvas.drawArc(sound_rect, i * (itemSize + mSplitSize), itemSize, false, mPaint);
+            // 根据进度画圆弧
         }
 
         mPaint.setColor(secondColor);
 
         for (int i = 0; i < currentCount; i++) {
-            canvas.drawArc(sound_rect, i * (itemSize + mSplitSize), itemSize, false, mPaint); // 根据进度画圆弧
+            canvas.drawArc(sound_rect, i * (itemSize + mSplitSize), itemSize, false, mPaint);
+            // 根据进度画圆弧
         }
 
     }
@@ -202,7 +197,7 @@ public class SoundView extends View {
 
         if (currentCount < totalCount) {
             currentCount++;
-        }else {
+        } else {
             currentCount = 0;
         }
 
@@ -226,16 +221,18 @@ public class SoundView extends View {
             case MotionEvent.ACTION_DOWN:
                 currentY = (int) event.getY();
                 addSound();
-                Log.d("TANG","DOWN ======");
+                Log.d("TANG", "DOWN ======");
                 break;
             case MotionEvent.ACTION_UP:
                 downY = (int) event.getY();
-                Log.d("TANG","UP ======");
+                Log.d("TANG", "UP ======");
                 if (downY > currentY) {
                     reduceSound();
                 } else {
                     addSound();
                 }
+                break;
+            default:
                 break;
         }
 
