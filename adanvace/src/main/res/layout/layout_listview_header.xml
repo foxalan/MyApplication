@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="60dp"
+    android:background="@color/myBarColor"
+    android:layout_height="100dp"
     android:gravity="center"
     android:orientation="vertical">
 
     <ProgressBar
-        android:visibility="gone"
+        android:layout_marginStart="20dp"
         android:layout_centerVertical="true"
         android:id="@+id/pb_refresh"
         android:layout_width="wrap_content"
@@ -17,13 +18,15 @@
     </ProgressBar>
 
     <LinearLayout
+        android:padding="20dp"
         android:gravity="center_horizontal"
         android:orientation="vertical"
         android:layout_centerInParent="true"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <TextView
+
             android:text="下拉刷新"
             android:textColor="@color/black"
             android:textSize="15sp"
@@ -32,6 +35,7 @@
             android:layout_height="wrap_content" />
 
         <TextView
+
             android:text="上次刷新时间:8月14号　09:04"
             android:textColor="@color/black"
             android:textSize="15sp"
